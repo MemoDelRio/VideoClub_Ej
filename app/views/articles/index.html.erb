@@ -1,0 +1,23 @@
+<h1>Bienvenido, esta es una aplicacion para ver Peliculas</h1>
+
+Esta es una lista con <%= Article.public_count %> peliculas, puedes crear, editar y rentar.
+
+<ul>
+  <% @articles.each do |article| %>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to "Crear pelicula", new_article_path %>
+
+<!-- 
+<%= link_to "Rentar peliculas", @show_article_path %>
+
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+-->
